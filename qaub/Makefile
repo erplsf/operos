@@ -16,3 +16,6 @@ pack:
 	mmd -i qaub.img ::/EFI
 	mmd -i qaub.img ::/EFI/BOOT
 	mcopy -i qaub.img BOOTX64.EFI ::/EFI/BOOT
+
+run:
+	qemu-system-x86_64 -bios /usr/share/edk2-ovmf/x64/OVMF.fd -drive format=raw,file=qaub.img
